@@ -21,6 +21,9 @@ Fuction "calculate_balance" then calculates the monthly return for the weighted 
 Function "rolling_returns" takes the data of the function "calculate_balance", and creates the compounded returns of them for intervals of 12 months, 36, 72 and 120 (1, 3,5, and 10 years, respectively).
 The code after that calls the functions, creates a description of the retults, and saves it to a file.
 
+Several things I learned while making this project: Firstly, the pandas library was a great help, and made things way easier than they would have been. Also, I shouldv'e had a clearer picture of how I wanted this to look when I started. Each rewrite and change takes a long time, and then there's bugs...
+
+
                                                                 _________technical specs and issues________
 1) The leverage factor for the ETF was set at 2.9269, which was set by using a simple regression (made by chatgpt). There are several issues. Firstly, the levergae factor is not static, and the regression and input I did does not capture that. Also, the sample size was small - only ten years - and therefore may not capture future amounts.
 2) To invest in the NASDAQ 100, there are usuually small fees - around .2 percent. This model does not reflect those fees. While this is not a big deal, it is possible that this significantly changes the eqaution, as I attempt to show the best amount of weights - deciding between .2 or .3, for example; and a difference of .2 percent annualy, combined with the issue discussed about the leverage factor, could affect this.
